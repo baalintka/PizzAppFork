@@ -113,6 +113,16 @@ public class PizzApp extends javax.swing.JFrame {
         lblAr.setText("1750");
 
         numDb.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
+        numDb.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                numDbStateChanged(evt);
+            }
+        });
+        numDb.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                numDbPropertyChange(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlFizetendoLayout = new javax.swing.GroupLayout(pnlFizetendo);
         pnlFizetendo.setLayout(pnlFizetendoLayout);
@@ -147,10 +157,25 @@ public class PizzApp extends javax.swing.JFrame {
         pnlExtrak.setBorder(javax.swing.BorderFactory.createTitledBorder("Extrák"));
 
         chbSajt.setText("sajt");
+        chbSajt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chbSajtActionPerformed(evt);
+            }
+        });
 
         chbHagyma.setText("hagyma");
+        chbHagyma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chbHagymaActionPerformed(evt);
+            }
+        });
 
         chbAnanasz.setText("ananász");
+        chbAnanasz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chbAnanaszActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlExtrakLayout = new javax.swing.GroupLayout(pnlExtrak);
         pnlExtrak.setLayout(pnlExtrakLayout);
@@ -258,7 +283,7 @@ public class PizzApp extends javax.swing.JFrame {
     }//GEN-LAST:event_rdbMeret25ActionPerformed
 
     private void btnRendelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRendelActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnRendelActionPerformed
 
     private void cmdValaszthatoPizzakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdValaszthatoPizzakActionPerformed
@@ -290,6 +315,47 @@ public class PizzApp extends javax.swing.JFrame {
         vegsoAr=vegsoAr*db;
         lblOsszesito.setText(vegsoAr+""); 
     }//GEN-LAST:event_rdbMeret32ActionPerformed
+
+    private void numDbStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_numDbStateChanged
+        
+    }//GEN-LAST:event_numDbStateChanged
+
+    private void numDbPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_numDbPropertyChange
+        
+    }//GEN-LAST:event_numDbPropertyChange
+
+    private void chbSajtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbSajtActionPerformed
+        int extra1 = 200;
+        int extra2 = 0;
+        int extra3 = 0;
+        extrak = extra1 + extra2 + extra3;
+        db=1;
+        vegsoAr=pizzaalapAr*meret+extrak;
+        vegsoAr=vegsoAr*db;
+        lblOsszesito.setText(vegsoAr+"");
+    }//GEN-LAST:event_chbSajtActionPerformed
+
+    private void chbHagymaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbHagymaActionPerformed
+        int extra1 = 0;
+        int extra2 = 200;
+        int extra3 = 0;
+        extrak = extra1 + extra2 + extra3;
+        db=1;
+        vegsoAr=pizzaalapAr*meret+extrak;
+        vegsoAr=vegsoAr*db;
+        lblOsszesito.setText(vegsoAr+"");
+    }//GEN-LAST:event_chbHagymaActionPerformed
+
+    private void chbAnanaszActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chbAnanaszActionPerformed
+        int extra1 = 0;
+        int extra2 = 0;
+        int extra3 = 200;
+        extrak = extra1 + extra2 + extra3;
+        db=1;
+        vegsoAr=pizzaalapAr*meret+extrak;
+        vegsoAr=vegsoAr*db;
+        lblOsszesito.setText(vegsoAr+"");
+    }//GEN-LAST:event_chbAnanaszActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
