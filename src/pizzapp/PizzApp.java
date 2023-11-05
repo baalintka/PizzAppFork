@@ -8,7 +8,18 @@ public class PizzApp extends javax.swing.JFrame {
     double meret;
     public PizzApp() {
         initComponents();
+        pizzaalapAr = 1750;
+        meret=1;
         
+        int extra1 = 0;
+        int extra2 = 0;
+        int extra3 = 0;
+        extrak = extra1 + extra2 + extra3;
+        
+        db = 1;
+        vegsoAr=pizzaalapAr*meret+extrak;
+        vegsoAr=vegsoAr*db;
+        lblOsszesito.setText(vegsoAr+"");
     }
 
     @SuppressWarnings("unchecked")
@@ -46,6 +57,11 @@ public class PizzApp extends javax.swing.JFrame {
 
         cmdValaszthatoPizzak.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Margherita", "Hawaii", "Songoku", "Diavola" }));
         cmdValaszthatoPizzak.setSelectedIndex(2);
+        cmdValaszthatoPizzak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdValaszthatoPizzakActionPerformed(evt);
+            }
+        });
 
         pnlMeret.setBorder(javax.swing.BorderFactory.createTitledBorder("Méret"));
 
@@ -236,6 +252,29 @@ public class PizzApp extends javax.swing.JFrame {
     private void btnRendelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRendelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRendelActionPerformed
+
+    private void cmdValaszthatoPizzakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdValaszthatoPizzakActionPerformed
+        int index=cmdValaszthatoPizzak.getSelectedIndex();
+        if(index == 0){
+            pizzaalapAr = 1590;
+        }else if(index == 1){
+            pizzaalapAr = 1680;
+        }else if(index == 2){
+            //int pizzaAlapAr2 = 1750;
+             pizzaalapAr= 1750;
+        }else if(index == 3){
+             pizzaalapAr = 2100;
+        }
+        meret=1;
+        int extra1 = 0;
+        int extra2 = 0;
+        int extra3 = 0;
+        extrak = extra1 + extra2 + extra3;
+        db=1;
+        vegsoAr=pizzaalapAr*meret+extrak;
+        vegsoAr=vegsoAr*db;
+        lblOsszesito.setText(vegsoAr+"");
+    }//GEN-LAST:event_cmdValaszthatoPizzakActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
