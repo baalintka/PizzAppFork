@@ -76,6 +76,11 @@ public class PizzApp extends javax.swing.JFrame {
         buttonGroup1.add(rdbMeret32);
         rdbMeret32.setSelected(true);
         rdbMeret32.setText("32 cm");
+        rdbMeret32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbMeret32ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlMeretLayout = new javax.swing.GroupLayout(pnlMeret);
         pnlMeret.setLayout(pnlMeretLayout);
@@ -246,7 +251,10 @@ public class PizzApp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void rdbMeret25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbMeret25ActionPerformed
-        // TODO add your handling code here:
+        meret=0.75;
+        vegsoAr=pizzaalapAr*meret+extrak;
+        vegsoAr=vegsoAr*db;
+        lblOsszesito.setText(vegsoAr+"");
     }//GEN-LAST:event_rdbMeret25ActionPerformed
 
     private void btnRendelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRendelActionPerformed
@@ -275,6 +283,13 @@ public class PizzApp extends javax.swing.JFrame {
         vegsoAr=vegsoAr*db;
         lblOsszesito.setText(vegsoAr+"");
     }//GEN-LAST:event_cmdValaszthatoPizzakActionPerformed
+
+    private void rdbMeret32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbMeret32ActionPerformed
+      meret=1;
+        vegsoAr=pizzaalapAr*meret+extrak;
+        vegsoAr=vegsoAr*db;
+        lblOsszesito.setText(vegsoAr+""); 
+    }//GEN-LAST:event_rdbMeret32ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
