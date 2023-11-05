@@ -1,9 +1,14 @@
 package pizzapp;
 
 public class PizzApp extends javax.swing.JFrame {
-
+    int pizzaalapAr=0;
+    int db = 1;
+    int extrak;
+    double vegsoAr;
+    double meret;
     public PizzApp() {
         initComponents();
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -154,6 +159,11 @@ public class PizzApp extends javax.swing.JFrame {
         jScrollPane1.setViewportView(txaOsszesito);
 
         btnRendel.setText("Megrendelem");
+        btnRendel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRendelActionPerformed(evt);
+            }
+        });
 
         lblOsszesito.setText("Összestő:");
 
@@ -222,6 +232,10 @@ public class PizzApp extends javax.swing.JFrame {
     private void rdbMeret25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbMeret25ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rdbMeret25ActionPerformed
+
+    private void btnRendelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRendelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRendelActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
